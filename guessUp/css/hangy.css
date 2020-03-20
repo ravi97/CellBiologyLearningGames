@@ -74,6 +74,7 @@ p {
   border-radius: 5px;
   -khtml-border-radius: 5px;
   border: solid 1px #fff;
+  box-sizing: content-box;
 }
 #alphabet li:hover {
   background: #c1d72e;

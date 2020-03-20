@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="hangy.css?v=1.0.0" />
-    <script type="text/javascript" src="js/guess.js?v=1.0.0"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/hangy.css?v=1.0.1" />
+    <script type="text/javascript" src="js/guess.js?v=1.0.1"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper container">
       <h1>Guess Up</h1>
       <p>
         Use the alphabet below to guess the word, or click hint to get a clue.
       </p>
     </div>
-    <div class="wrapper">
+    <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
       <div id="buttons"></div>
       <p id="catagoryName"></p>
       <div id="hold"></div>
       <p id="mylives"></p>
       <p id="clue">Clue -</p>
+      <div class="row">
+        <div class="col align-self-center">
+        <button id="hint">Hint</button>
+      </div>
+      <div class="col align-self-center">
+        <button id="reset">Play again</button>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
       <canvas id="stickman"
         >This Text will show if the Browser does NOT support HTML5 Canvas
         tag</canvas>
@@ -24,11 +42,10 @@
       <div id="imagetoguess">
           <img id="imageguess" >
       </div>
-
-      <div class="container">
-        <button id="hint">Hint</button>
-        <button id="reset">Play again</button>
       </div>
     </div>
+  </div>
+
+      
   </body>
 </html>
