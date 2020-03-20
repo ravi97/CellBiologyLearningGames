@@ -7,11 +7,18 @@ body {
 }
 
 .bg {
-    background: url("../imac.png");
+    /*background: url("../imac.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    overflow: scroll;
-    min-width: 1250px;
+    background-repeat: no-repeat;*/
+    /*overflow: auto;*/
+    /*min-width: 1250px;*/
+    overflow: auto;
+    min-height: 506px;
+    min-width: 100%;
+    border: black solid;
+    border-width: 25px;
+    border-radius: 25px;
+    background-color: #cdf9f3;
 }
 
 /* Titles */
@@ -19,7 +26,7 @@ body {
 .title {
     text-align: center;
     color: #000;
-    padding-top: 150px;
+    padding-top: 5%;
 }
 
 
@@ -56,10 +63,10 @@ td {
 
 /* Button Styling */
 .buttons {
-    padding-top: 50px;
-    padding-right: 35px;
+    padding-top: 5%;
+    padding-right: 7%;
     text-align: center;
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .button {
@@ -94,6 +101,7 @@ td {
     font-size: 30px;
     width: 100px;
     height: 220px;
+    padding: unset;
     list-style-type: none;
 }
 
