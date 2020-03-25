@@ -102,11 +102,19 @@ window.onload = function() {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      for (var i = letters.children.length - 1; i >= 0; i--) {
+        letters.children[i].onclick = null;
+        letters.children[i].setAttribute("class", "active");
+      }
+      hint.onclick = null;
     }
-    for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        for (var i = letters.children.length - 1; i >= 0; i--) {
+        letters.children[i].onclick = null;
+        letters.children[i].setAttribute("class", "active");
       }
+      hint.onclick = null;
     }
   };
 
@@ -210,6 +218,32 @@ window.onload = function() {
     };
   };
 
+  // Hint
+
+  var hintFunc = function() {
+    hints = [
+      [
+        "Power house of the cell",
+        "Brain of a cell",
+        "Basic unit of life in organisms of the kingdom plantae",
+        "Brain of a cell",
+        "Power house of the cell",
+        "Basic unit of life in organisms of the kingdom plantae",
+        "Basic unit of life in organisms of the kingdom plantae"
+      ],
+      ["Basic unit of life in organisms of the kingdom animalia", "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia",
+       "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia"],
+      ["unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", 
+      "unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", "unicellular organism which has the ability to alter its shape"]
+    ];
+
+    var catagoryIndex = categories.indexOf(chosenCategory);
+    var hintIndex = chosenCategory.indexOf(word);
+    //showClue.innerHTML = "Clue: - " + hints[catagoryIndex][hintIndex];
+    swal(hints[catagoryIndex][hintIndex])
+  };
+
+
   // Play
   play = function() {
     categories = [
@@ -250,6 +284,7 @@ window.onload = function() {
     word = word.replace(/\s/g, "-");
     console.log(word);
     buttons();
+    hint.onclick = hintFunc;
 
     geusses = [];
     lives = 10;
@@ -263,36 +298,13 @@ window.onload = function() {
 
   play();
 
-  // Hint
-
-  hint.onclick = function() {
-    hints = [
-      [
-        "Power house of the cell",
-        "Brain of a cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Brain of a cell",
-        "Power house of the cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Basic unit of life in organisms of the kingdom plantae"
-      ],
-      ["Basic unit of life in organisms of the kingdom animalia", "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia",
-       "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia"],
-      ["unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", 
-      "unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", "unicellular organism which has the ability to alter its shape"]
-    ];
-
-    var catagoryIndex = categories.indexOf(chosenCategory);
-    var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "Clue: - " + hints[catagoryIndex][hintIndex];
-  };
 
   // Reset
 
   document.getElementById("reset").onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
+    //showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     play();
   };
