@@ -132,7 +132,8 @@ document.getElementById("hint").onclick = function () {
   swal(level[word]);
 }
 $('#board tr').sortable({
-  placeholder: '#board tr',
+  //placeholder: 'sortable-placeholder',
+  tolerance: "pointer" ,
   update: function checkOrder(event, ui) {
     var tiles = $('td');
     var tempWord = '';
