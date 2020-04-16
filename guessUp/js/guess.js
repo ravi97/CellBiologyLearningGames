@@ -1,5 +1,8 @@
 window.onload = function() {
-  import{categories, imglist, hints} from 'game_data.json'
+  // import{categories, imglist, hints} from 'game_data.json'
+  var categories = window.categories;
+  var imglist = window.imglist;
+  var hints = window.hints;
   var alphabet = [
     "a",
     "b",

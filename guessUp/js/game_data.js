@@ -1,4 +1,4 @@
-var categories = [
+window.categories = [
       [
         "mitochondria",
         "nucleus",
@@ -11,7 +11,7 @@ var categories = [
       ["animal-cell", "virus", "animal-cell", "virus", "animal-cell"],
       ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
     ];
-var imglist = [
+window.imglist = [
       [
         "mitochondria",
         "nucleus",
@@ -25,7 +25,7 @@ var imglist = [
       ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
     ];
 
-var hints = [
+window.hints = [
       [
         "Power house of the cell",
         "Brain of a cell",
@@ -43,4 +43,4 @@ var hints = [
 
 
 
- export{categories, imglist, hints};
+ // export{categories, imglist, hints};
