@@ -152,3 +152,8 @@ button:hover {
     padding: 0 0 0 25px;
  }
 }
+
+.swal2-modal button.styled
+{
+  width: auto !important;
+}

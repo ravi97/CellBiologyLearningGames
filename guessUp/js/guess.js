@@ -1,8 +1,7 @@
 window.onload = function() {
   // import{categories, imglist, hints} from 'game_data.json'
-  var categories = window.categories;
-  var imglist = window.imglist;
-  var hints = window.hints;
+  var words = window.words;
+  var wordslist = Object.keys(words);
   var alphabet = [
     "a",
     "b",
@@ -31,52 +30,6 @@ window.onload = function() {
     "y",
     "z"
   ];
-  /*
-  var hints = [
-      [
-        "Power house of the cell",
-        "Brain of a cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Brain of a cell",
-        "Power house of the cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Basic unit of life in organisms of the kingdom plantae"
-      ],
-      ["Basic unit of life in organisms of the kingdom animalia", "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia",
-       "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia"],
-      ["unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", 
-      "unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", "unicellular organism which has the ability to alter its shape"]
-    ];
-  var categories = [
-      [
-        "mitochondria",
-        "nucleus",
-        "plant-cell",
-        "nucleus",
-        "mitochondria",
-        "plant-cell",
-        "plant-cell"
-      ],
-      ["animal-cell", "virus", "animal-cell", "virus", "animal-cell"],
-      ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
-    ];
-
-  var imglist = [
-      [
-        "mitochondria",
-        "nucleus",
-        "plantcell",
-        "nucleus",
-        "mitochondria",
-        "plantcell",
-        "plantcell"
-      ],
-      ["animal", "virus", "animal", "virus", "animal"],
-      ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
-    ];
-  */
-
-  var categories; // Array of topics
   var chosenCategory; // Selected catagory
   var getHint; // Word getHint
   var word; // Selected word
@@ -85,8 +38,7 @@ window.onload = function() {
   var lives; // Lives
   var counter; // Count correct geusses
   var space; // Number of spaces in word '-'
-
-  var imglist; // Array of images
+  var hintText; 
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -95,6 +47,13 @@ window.onload = function() {
   var showClue = document.getElementById("clue");
 
   var image = document.getElementById("imageguess");
+
+shuffle = function(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
   // create alphabet ul
   var buttons = function() {
@@ -114,13 +73,8 @@ window.onload = function() {
 
   // Select Catagory
   var selectCat = function() {
-    if (chosenCategory === categories[0]) {
-      catagoryName.innerHTML = "The Chosen Category Is a Plant Category";
-    } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is a Animal or Virus";
-    } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Unicellular";
-    }
+
+    catagoryName.innerHTML = "Category : " + chosenCategory ;
   };
 
   // Create geusses ul
@@ -158,6 +112,7 @@ window.onload = function() {
     }
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        swal("","<div style='font-size :24px;'>" + word.toUpperCase() + " : "+ hintText + "</div>", "success");
         for (var i = letters.children.length - 1; i >= 0; i--) {
         letters.children[i].onclick = null;
         letters.children[i].setAttribute("class", "active");
@@ -269,69 +224,24 @@ window.onload = function() {
   // Hint
 
   var hintFunc = function() {
-    /*
-    hints = [
-      [
-        "Power house of the cell",
-        "Brain of a cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Brain of a cell",
-        "Power house of the cell",
-        "Basic unit of life in organisms of the kingdom plantae",
-        "Basic unit of life in organisms of the kingdom plantae"
-      ],
-      ["Basic unit of life in organisms of the kingdom animalia", "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia",
-       "Infects a host cell", "Basic unit of life in organisms of the kingdom animalia"],
-      ["unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", 
-      "unicellular organism which has the ability to alter its shape", "genus of unicellular ciliates, commonly studied as a representative of the ciliate group", "unicellular organism which has the ability to alter its shape"]
-    ];
-    */
-
-    var catagoryIndex = categories.indexOf(chosenCategory);
-    var hintIndex = chosenCategory.indexOf(word);
-    //showClue.innerHTML = "Clue: - " + hints[catagoryIndex][hintIndex];
-    swal(hints[catagoryIndex][hintIndex])
+    swal("","<div style='font-size :24px;'>" + hintText + "</div>")
   };
 
+window.count = 0 ;
 
   // Play
   play = function() {
-    /*
-    categories = [
-      [
-        "mitochondria",
-        "nucleus",
-        "plant-cell",
-        "nucleus",
-        "mitochondria",
-        "plant-cell",
-        "plant-cell"
-      ],
-      ["animal-cell", "virus", "animal-cell", "virus", "animal-cell"],
-      ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
-    ];
 
-    imglist = [
-      [
-        "mitochondria",
-        "nucleus",
-        "plantcell",
-        "nucleus",
-        "mitochondria",
-        "plantcell",
-        "plantcell"
-      ],
-      ["animal", "virus", "animal", "virus", "animal"],
-      ["amoeba", "paramecium", "amoeba", "paramecium", "amoeba"]
-    ];
-    */
-
-    var a = Math.floor(Math.random() * categories.length);
-    chosenCategory = categories[a];
-    var b = Math.floor(Math.random() * chosenCategory.length);
-    word = chosenCategory[b];
-
-    image.src = "assets/" + imglist[a][b] + ".jpg";
+    count+=1;
+    if (count%wordslist.length == 0)
+    {
+      shuffle(wordslist)
+      console.log("shuffled");
+    }
+    chosenCategory = words[wordslist[count%wordslist.length]][0];
+    word = wordslist[count%wordslist.length];
+    hintText = words[wordslist[count%wordslist.length]][1];
+    image.src = "assets/" + words[wordslist[count%wordslist.length]][2];
 
     word = word.replace(/\s/g, "-");
     console.log(word);

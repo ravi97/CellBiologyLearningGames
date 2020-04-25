@@ -1,13 +1,3 @@
-//var iframe = document.getElementById("mainSandboxGuts");
-//var iframe2=document.getElementByClassname('mainSandboxGuts')[0];
-//console.log(iframe);
-//console.log(iframe2);
-
-//iframe.addEventListener("load",function(){
-//window.frames[0].document.body.style.height="100% !important";
-//  window.frames[0].document.body.style.height(100);
-
-//})
 
 var level;
 var wordbank;
@@ -42,8 +32,7 @@ function chooseLevel(lvl) {
   rndNum = getRandomInt(0, wordbank.length - 1);
   word = wordbank[rndNum];
   reSetSquares();
-  // play();
-}//chooseLevel
+  }//chooseLevel
 
 function play() {
   if (level != levelMedium && level != levelHard) {
@@ -58,15 +47,6 @@ function play() {
     document.getElementById(i + 1).innerHTML = rstring.charAt(i);
   }
 } //play function
-
-// document.getElementById("squares").onclick = function(){
-//   if (level != levelMedium || level != levelHard){
-//     chooseLevel(levelEasy);
-//   } else {
-//       reSetSquares();
-//       play()
-//   }
-// }
 
 document.getElementById("next").onclick = function () {
   reSetSquares();
@@ -114,7 +94,7 @@ $('#board tr').sortable({
       tempWord += letter;
     }
     if (tempWord === word) {
-      swal("Correct!", "You guessed the word!", "success");
+      swal("", word.toUpperCase() + " : "+ level[word], "success");
       $('ul').append('<li>' + word + '</li>');
       score++
       $('#score').text(score);
