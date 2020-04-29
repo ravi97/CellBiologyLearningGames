@@ -1,6 +1,8 @@
 //insert a word into the easy word bank by adding another row
 //inside the brackets of the variable 'levelEasy'
 //in the format <word>:"<definition>",
+//NOTE: DO NOT ADD SPACES IN THE WORD!!!
+//Use Underscore '_' instead of space inside the word
 var levelEasy = {
   ribosomes: "Non-membrane bound structures which make proteins",
   lysosome: "fluid-filled ‘bags’ containing digestive chemicals for breaking down food molecules, cell wastes, and worn-out cell parts",
@@ -14,6 +16,8 @@ var levelEasy = {
 //insert a word into the easy word bank by adding another row
 //inside the brackets of the variable 'levelMedium'
 //in the format <word>:"<definition>",
+//NOTE: DO NOT ADD SPACES IN THE WORD!!!
+//Use Underscore '_' instead of space inside the word
 var levelMedium = {
   cell_wall: "tough, rigid outer covering that protects and provides shape to the cell",
   cytosol: "gel-like fluid that fills the cell, holds organelles in place, and aids in waste break down and energy transformation (metabolism)",
@@ -28,6 +32,8 @@ var levelMedium = {
 //insert a word into the easy word bank by adding another row
 //inside the brackets of the variable 'levelHard'
 //in the format <word>:"<definition>",
+//NOTE: DO NOT ADD SPACES IN THE WORD!!!
+//Use Underscore '_' instead of space inside the word
 var levelHard = {
   mitochondria: "site of respiration (energy production) where chemical energy in food is transformed into ATP—the energy of cells ",
   prokaryotic: "cells that lack membrane-bound nuclei or organelles",
