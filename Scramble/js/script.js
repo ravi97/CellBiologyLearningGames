@@ -5,6 +5,7 @@ var rndNum;
 var word;
 var originalHTML = document.getElementById("squares").innerHTML
 var score = 0;
+var guessed = []
 
 String.prototype.shuffle = function () {
   var a = this.split(""),
@@ -93,11 +94,13 @@ $('#board tr').sortable({
       var letter = $(tiles[i]).text();
       tempWord += letter;
     }
-    if (tempWord === word) {
+    if (tempWord === word && !guessed.includes(tempWord)) {
       swal("", word.toUpperCase() + " : "+ level[word], "success");
       $('ul').append('<li>' + word + '</li>');
       score++
       $('#score').text(score);
+      guessed.push(tempWord)
+
     } //tempword
   }//function check order
 }); //sortable
