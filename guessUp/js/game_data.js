@@ -1,4 +1,10 @@
 // "word" : ["category", "Hint", "image_file_name.extension"]
+//NOTE: DO NOT ADD SPACES IN THE WORD!!!
+//Use hyphen '-' instead of spaces inside the word to be guessed
+
+//Every word belongs into one of 3 categories: 'Plant', 'Animal or Virus' or 'Unicellular'
+//Place the corresponding image of each word into the 'Assets' folder present inside the 'guessUp' folder
+ 
 
 window.words = {
 "mitochondria" : [ "Plant", "Power house of the cell", "mitochondria.jpg"],
