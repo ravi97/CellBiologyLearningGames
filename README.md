@@ -1,5 +1,5 @@
 # CellBiologyLearningGames
-# CSCE 606 - Software engineering (Spring 2020)#
+# CSCE 606 - Software engineering (Spring 2020)
 ## Course project by Team - theBugSlayers ##
 Team members:
 * Keerthana Reddy Nerella
