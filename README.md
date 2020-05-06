@@ -18,4 +18,6 @@ Team members:
 6. For the Scramble game, there are three levels of difficulty, and words need to be entered under the corresponding difficulty level they wished to be a part of.
 7. The words themselves cannot contain spaces or other non-alphabetic characters.
 8. The image file names and words must be unique.
+9. After successfully uploading and/or changing the code on the FTP server, contact the vetmed team so that they will update the changes on the vetmed server
+10. For more information, check the final report in the documentation/spring2020 folder
 
