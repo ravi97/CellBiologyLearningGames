@@ -10,8 +10,7 @@ Team members:
 * Tanu Shree
 ## Project topic - Cell biology learning games ##
 ### Instructions on Game data and Deployment:
-
-
+Coming Soon!!!
 <!---
 1. Connect to FTP Server using the credentials 
 2. Navigate to /futuredogter.com/stepstone/workArea/NIH-SEPA-1/activityLib/practice_c1/apps
