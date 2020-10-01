@@ -1,15 +1,17 @@
 # CellBiologyLearningGames
-# CSCE 606 - Software engineering (Spring 2020)
-## Course project by Team - theBugSlayers ##
+# CSCE 606 - Software engineering (Fall 2020)
+## Course project by Team - SEprojectgroup ##
 Team members:
-* Keerthana Reddy Nerella
-* Ravikiran Ramesh
-* Sriharish Srinivasan
-* Hsing-Yu Chen
-* I-Fang Huang
-* Jian-Siang Hong
+* Darakshan Anwar 
+* Venkata Sameer Kumar Betana Bhotla 
+* John Griffin 
+* Rohit Jain
+* Nimoshika Jayaraman
+* Tanu Shree
 ## Project topic - Cell biology learning games ##
 ### Instructions on Game data and Deployment:
+Coming Soon!!!
+<!---
 1. Connect to FTP Server using the credentials 
 2. Navigate to /futuredogter.com/stepstone/workArea/NIH-SEPA-1/activityLib/practice_c1/apps
 3. Here you will find our two apps Scramble and guessUp
@@ -20,4 +22,4 @@ Team members:
 8. The image file names and words must be unique.
 9. After successfully uploading and/or changing the code on the FTP server, contact the vetmed team so that they will update the changes on the vetmed server
 10. For more information, check the final report in the documentation/spring2020 folder
-
+-->
