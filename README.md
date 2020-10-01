@@ -10,6 +10,9 @@ Team members:
 * Tanu Shree
 ## Project topic - Cell biology learning games ##
 ### Instructions on Game data and Deployment:
+
+
+<!---
 1. Connect to FTP Server using the credentials 
 2. Navigate to /futuredogter.com/stepstone/workArea/NIH-SEPA-1/activityLib/practice_c1/apps
 3. Here you will find our two apps Scramble and guessUp
@@ -20,4 +23,4 @@ Team members:
 8. The image file names and words must be unique.
 9. After successfully uploading and/or changing the code on the FTP server, contact the vetmed team so that they will update the changes on the vetmed server
 10. For more information, check the final report in the documentation/spring2020 folder
-
+-->
