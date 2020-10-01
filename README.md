@@ -1,13 +1,13 @@
 # CellBiologyLearningGames
-# CSCE 606 - Software engineering (Spring 2020)
-## Course project by Team - theBugSlayers ##
+# CSCE 606 - Software engineering (Fall 2020)
+## Course project by Team - SEprojectgroup ##
 Team members:
-* Keerthana Reddy Nerella
-* Ravikiran Ramesh
-* Sriharish Srinivasan
-* Hsing-Yu Chen
-* I-Fang Huang
-* Jian-Siang Hong
+* Darakshan Anwar 
+* Venkata Sameer Kumar Betana Bhotla 
+* John Griffin 
+* Rohit Jain
+* Nimoshika Jayaraman
+* Tanu Shree
 ## Project topic - Cell biology learning games ##
 ### Instructions on Game data and Deployment:
 1. Connect to FTP Server using the credentials 
