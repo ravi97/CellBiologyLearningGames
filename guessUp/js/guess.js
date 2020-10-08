@@ -49,10 +49,10 @@ window.onload = function() {
   var image = document.getElementById("imageguess");
 
 shuffle = function(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+	for (let i = array.length - 1; i > 0; i--) {
+		let j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
 }
 
   // create alphabet ul
@@ -226,30 +226,45 @@ shuffle = function(array) {
   var hintFunc = function() {
     swal("","<div style='font-size :24px;'>" + hintText + "</div>")
   };
-
+	
+	// Helper function for unique number of characters in a string
+	function unique_char(str) {
+		var uniql="";
+		for (var x=0;x < str.length;x++){
+			var char = str.charAt(x);
+			if((/[a-zA-Z]/).test(char) == false){
+				continue;
+			}
+			if(uniql.indexOf(char)==-1){
+				uniql += str[x];
+			}
+		}
+		return uniql.length;  
+	}  
+	
 window.count = 0 ;
 
   // Play
   play = function() {
 
-    count+=1;
     if (count%wordslist.length == 0)
     {
       shuffle(wordslist)
       console.log("shuffled");
     }
+	count+=1;
     chosenCategory = words[wordslist[count%wordslist.length]][0];
     word = wordslist[count%wordslist.length];
     hintText = words[wordslist[count%wordslist.length]][1];
     image.src = "assets/" + words[wordslist[count%wordslist.length]][2];
 
     word = word.replace(/\s/g, "-");
-    console.log(word);
+    // console.log(word);
     buttons();
     hint.onclick = hintFunc;
 
     geusses = [];
-    lives = 10;
+    lives = Math.min(Math.ceil(unique_char(word)*(3/2)), 10); // No. of lives will be based on length of the word
     counter = 0;
     space = 0;
     result();
