@@ -1,6 +1,6 @@
 window.onload = function() {
   // import{categories, imglist, hints} from 'game_data.json'
-  var words = window.words;
+  var words = window.easywords;
   var wordslist = Object.keys(words);
   var alphabet = [
     "a",
@@ -47,6 +47,8 @@ window.onload = function() {
   var showClue = document.getElementById("clue");
 
   var image = document.getElementById("imageguess");
+  var level = document.getElementById("levels");
+
 
 shuffle = function(array) {
 	for (let i = array.length - 1; i > 0; i--) {
@@ -275,9 +277,46 @@ window.count = 0 ;
 
   play();
 
+  document.getElementById("level").onclick = function () {
+    swal({
+      title: 'Please Select Difficulty Level',
+      html: "<br>" +
+        '<button id="buttonEasy" class="button btn-lg" style="margin: 0 5px">EASY</button>' +
+        '<button id="buttonMedium" class="button btn-lg" style="margin: 0 5px">MEDIUM</button>' +
+        '<button id="buttonHard" class="button btn-lg" style="margin: 0 5px">HARD</button>',
+      showCancelButton: false,
+      showConfirmButton: false
+    })//swal
+    document.getElementById("buttonEasy").onclick = function () {
+        words = window.easywords;
+        wordslist = Object.keys(words);
+        correct.parentNode.removeChild(correct);
+        letters.parentNode.removeChild(letters);
+        context.clearRect(0, 0, 400, 400);
+        play();
+        swal.clickConfirm();
+      }//buttonEasy
+      document.getElementById("buttonMedium").onclick = function () {
+        words = window.mediumwords;
+        wordslist = Object.keys(words);
+        correct.parentNode.removeChild(correct);
+        letters.parentNode.removeChild(letters);
+        context.clearRect(0, 0, 400, 400);
+        play();
+        swal.clickConfirm();
+      }//buttonMedium
+      document.getElementById("buttonHard").onclick = function () {
+        words = window.hardwords;
+        wordslist = Object.keys(words);
+        correct.parentNode.removeChild(correct);
+        letters.parentNode.removeChild(letters);
+        context.clearRect(0, 0, 400, 400);
+        play();
+        swal.clickConfirm();
+  }
+  }
 
   // Reset
-
   document.getElementById("reset").onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
