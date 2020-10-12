@@ -1,4 +1,3 @@
-
 var level;
 var wordbank;
 var rndNum;
@@ -87,6 +86,7 @@ document.getElementById("hint").onclick = function () {
 $('#board tr').sortable({
   //placeholder: 'sortable-placeholder',
   tolerance: "pointer" ,
+  axis: "x",
   update: function checkOrder(event, ui) {
     var tiles = $('td');
     var tempWord = '';
