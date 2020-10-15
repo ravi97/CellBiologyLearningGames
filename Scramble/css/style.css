@@ -2,19 +2,6 @@
 
 html { font-size:100%; }
 
-.tile_size
-
-{
-width: 150px;
-height 60%;
-}
-
-.hover_pointer
-
-{
-pointer-events: none;
-}
-
 body {
     font-family: 'Sue Ellen Francisco' !important;
 }
