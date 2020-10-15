@@ -1,3 +1,4 @@
+
 var level;
 var wordbank;
 var rndNum;
@@ -41,10 +42,10 @@ function play() {
   reSetSquares();
   var rstring = word.shuffle();
   for (var i = 1; i < word.length + 1; i++) {
-    document.getElementById("squares").innerHTML += '<td id="' + i + '" class ="ui-sortable-handle"></td>'
+    document.getElementById("squares").innerHTML += '<td id="' + i + '" class ="ui-sortable-handle tile_size"></td>'
   }
   for (var i = 0; i < word.length; i++) {
-    document.getElementById(i + 1).innerHTML = rstring.charAt(i);
+    document.getElementById(i + 1).innerHTML ='<span class="hover_pointer">' + rstring.charAt(i) + '</span>';
   }
 } //play function
 
@@ -86,7 +87,7 @@ document.getElementById("hint").onclick = function () {
 $('#board tr').sortable({
   //placeholder: 'sortable-placeholder',
   tolerance: "pointer" ,
-  axis: "x",
+  axis: "x" ,
   update: function checkOrder(event, ui) {
     var tiles = $('td');
     var tempWord = '';
